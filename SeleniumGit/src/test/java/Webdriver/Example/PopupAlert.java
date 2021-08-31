@@ -1,0 +1,35 @@
+package Webdriver.Example;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+public class PopupAlert {
+	
+	@Test
+	  public void testAlert() {
+	
+	System.setProperty("webdriver.chrome.driver","C:\\Software\\chromedriver_win32\\chromedriver.exe");
+	
+	WebDriver d6;
+	
+    d6=new ChromeDriver();
+	
+	d6.get("http://www.leafground.com/pages/Alert.html");
+	
+	d6.findElement(By.xpath("//button[@onclick='normalAlert()']")).click();
+	
+	String msg=d6.switchTo().alert().getText();
+	
+	System.out.println(msg);
+	
+	d6.switchTo().alert().accept();
+	
+	
+	//d6.quit();
+	
+	
+
+	
+}}
